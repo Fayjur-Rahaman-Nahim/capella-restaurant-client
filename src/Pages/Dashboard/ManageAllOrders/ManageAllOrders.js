@@ -29,18 +29,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const ManageAllOrders = () => {
-    const [purchaseProducts, setPurchaseProducts] = useState([]);
+    const [orderedMeals, setOrderedMeals] = useState([]);
     useEffect(() => {
-        fetch("https://frozen-bayou-71820.herokuapp.com/purchase")
+        fetch("https://lit-meadow-17656.herokuapp.com/order")
             .then(res => res.json())
-            .then(data => setPurchaseProducts(data))
+            .then(data => setOrderedMeals(data))
     }, [])
 
     // Status Update
     const handleStatus = (id, value) => {
         const status = value;
 
-        const url = `https://frozen-bayou-71820.herokuapp.com/purchase/${id}`;
+        const url = `https://lit-meadow-17656.herokuapp.com/order/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -50,7 +50,6 @@ const ManageAllOrders = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
                 if (data.modifiedCount > 0) {
                     alert("Ordered Shipped Successfully");
 
@@ -58,27 +57,13 @@ const ManageAllOrders = () => {
             })
     }
 
-    // //Delete Order
-    // const handleDeletePurchaseOrders = id => {
-    //     const url = `http://localhost:5000/purchase/${id}`;
-    //     fetch(url, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.deletedCount > 0) {
-    //                 alert('Deleted Successfully');
-    //                 const remaingPurchaseOrders = purchaseProducts?.filter(order => order._id !== id);
-    //                 setPurchaseProducts(remaingPurchaseOrders);
-    //             }
-    //         })
-    // }
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 360 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell align="center">Product Name</StyledTableCell>
+                        <StyledTableCell align="center">Meal Name</StyledTableCell>
                         <StyledTableCell align="center">Email</StyledTableCell>
                         <StyledTableCell align="center">Address</StyledTableCell>
                         <StyledTableCell align="center">Phone</StyledTableCell>
@@ -87,17 +72,17 @@ const ManageAllOrders = () => {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {purchaseProducts.map((purchaseProduct) => (
-                        <StyledTableRow key={purchaseProduct._id}>
-                            <StyledTableCell align="center">{purchaseProduct.product_name}</StyledTableCell>
-                            <StyledTableCell align="center">{purchaseProduct.email}</StyledTableCell>
-                            <StyledTableCell align="center">{purchaseProduct.address}</StyledTableCell>
-                            <StyledTableCell align="center">{purchaseProduct.number}</StyledTableCell>
-                            <StyledTableCell align="center">{purchaseProduct.status}</StyledTableCell>
+                    {orderedMeals.map((orderedMeal) => (
+                        <StyledTableRow key={orderedMeal._id}>
+                            <StyledTableCell align="center">{orderedMeal.meal_name}</StyledTableCell>
+                            <StyledTableCell align="center">{orderedMeal.email}</StyledTableCell>
+                            <StyledTableCell align="center">{orderedMeal.address}</StyledTableCell>
+                            <StyledTableCell align="center">{orderedMeal.number}</StyledTableCell>
+                            <StyledTableCell align="center">{orderedMeal.status}</StyledTableCell>
                             <StyledTableCell align="center">
                                 <div className="d-flex justify-content-around">
-                                    {/* <button className="btn btn-danger mt-2" onClick={() => handleStatus(purchaseProduct._id, "Cancled")} >Cancle</button> */}
-                                    <button className="btn btn-info mt-2" style={{ color: 'white' }} value="Shipped" onClick={() => handleStatus(purchaseProduct._id, "Shipped")} >Shipped</button>
+                                    {/* <button className="btn btn-danger mt-2" onClick={() => handleStatus(orderedMeal._id, "Cancled")} >Cancle</button> */}
+                                    <button className="btn btn-info mt-2" style={{ color: 'white' }} value="Shipped" onClick={() => handleStatus(orderedMeal._id, "Shipped")} >Shipped</button>
                                 </div>
                             </StyledTableCell>
                         </StyledTableRow>

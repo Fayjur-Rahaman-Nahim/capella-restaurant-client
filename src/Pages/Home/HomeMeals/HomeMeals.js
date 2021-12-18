@@ -6,7 +6,7 @@ import HomeMeal from '../HomeMeal/HomeMeal';
 const HomeMeals = () => {
     const [meals, setMeals] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/meals")
+        fetch("https://lit-meadow-17656.herokuapp.com/meals")
             .then(res => res.json())
             .then(data => setMeals(data))
     }, [])

@@ -73,7 +73,7 @@ const Register = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className="mt-5 pt-3">
-                        <img src="https://i.ibb.co/Kr2Bg3g/registration.jpg" className="img-fluid" alt="" />
+                        <img src="https://media.istockphoto.com/photos/vegetarian-pizza-with-broccoli-cherry-tomato-pepper-and-mushrooms-picture-id1297290376?b=1&k=20&m=1297290376&s=170667a&w=0&h=lwGeM5VzMWRRwJpGwGhLgoMVSDMJL5OuCYhnhCmNthc=" className="img-fluid" alt="" />
                     </div>
                 </Grid>
             </Grid>

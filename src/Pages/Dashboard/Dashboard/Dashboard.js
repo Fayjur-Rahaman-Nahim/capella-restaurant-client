@@ -13,26 +13,26 @@ import Typography from '@mui/material/Typography';
 import Button from '@restart/ui/esm/Button';
 import useAuth from '../../../Hooks/useAuth';
 import {
-    Routes,
-    Route,
     Link,
     Outlet,
+
     useNavigate
 } from "react-router-dom";
-import AddReview from '../AddReview/AddReview';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import AdminRoute from '../../Login/AdminRoute/AdminRoute';
-import MyOrders from '../MyOrders/MyOrders';
-import PrivateRoute from '../../../PrivateRoute/PrivateRoute';
-import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
-import Payment from '../Payment/Payment';
-import AddMeal from '../AddMeal/AddMeal';
-import ManageMeals from '../ManageMeals/ManageMeals';
+// import AddReview from '../AddReview/AddReview';
+// import MakeAdmin from '../MakeAdmin/MakeAdmin';
+// import MyOrders from '../MyOrders/MyOrders';
+// import PrivateRoute from '../../PrivateRoute/PrivateRoute'
+// import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
+// import Payment from '../Payment/Payment';
+// import AddMeal from '../AddMeal/AddMeal';
+// import ManageMeals from '../ManageMeals/ManageMeals';
+// import AdminRoute from '../AdminRoute/AdminRoute';
+// import Route from '../Route/Route';
 const drawerWidth = 240;
 
 function Dashboard(props) {
     const { admin, logOut, user } = useAuth();
-    let { path, url } = useRouteMatch();
+    // let { path, url } = useRouteMatch();
     const navigate = useNavigate();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -49,18 +49,18 @@ function Dashboard(props) {
             {/* <Toolbar /> */}
             <Link to='/'><Button className="btn btn-dark mt-3 mb-2 w-75">Back To Home</Button></Link>
             <Divider />
-            <Link to={`${url}/myOrders`}><Button className="btn btn-primary mt-2 w-75" color="inherit">My Order</Button></Link>
+            <Link to={`/dashboard/myOrders`}><Button className="btn btn-primary mt-2 w-75" color="inherit">My Order</Button></Link>
             <br />
-            <Link to={`${url}/addReview`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Add Review</Button></Link>
+            <Link to={`/dashboard/addReview`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Add Review</Button></Link>
             <br />
-            <Link to={`${url}/payment`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Payment</Button></Link>
+            <Link to={`/dashboard/payment`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Payment</Button></Link>
 
             {admin && <Box>
-                <Link to={`${url}/makeAdmin`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Make Admin</Button></Link>
+                <Link to={`/dashboard/makeAdmin`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Make Admin</Button></Link>
                 <br />
-                <Link to={`${url}/addMeal`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Add Meal</Button></Link>
-                <Link to={`${url}/manageAllOrders`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Manage All Orders</Button></Link>
-                <Link to={`${url}/manageMeals`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Manage Meals</Button></Link>
+                <Link to={`/dashboard/addMeal`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Add Meal</Button></Link>
+                <Link to={`/dashboard/manageAllOrders`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Manage All Orders</Button></Link>
+                <Link to={`/dashboard/manageMeals`}><Button className="btn btn-primary mt-2 w-75" color="inherit">Manage Meals</Button></Link>
 
             </Box>}
             {user.email && <Button className="btn btn-danger mt-2 w-75" onClick={handleLogOut} color="inherit">LogOut</Button>}
@@ -130,30 +130,12 @@ function Dashboard(props) {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
+                <Outlet />
+                {/* 
                 <Routes>
-                    <Route exact path={path}>
-                        <MyOrders></MyOrders>
-                    </Route>
-                    <Route path={`${path}/myOrders`}>
-                        <MyOrders></MyOrders>
-                    </Route>
-                    <PrivateRoute path={`${path}/addReview`}>
-                        <AddReview></AddReview>
-                    </PrivateRoute>
+                   
 
-                    <AdminRoute path={`${path}/addMeal`} element={<AddMeal />} />
-
-                    <AdminRoute path={`${path}/manageAllOrders`}>
-                        <ManageAllOrders></ManageAllOrders>
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/manageMeals`} element={<ManageMeals />} />
-                    <AdminRoute path={`${path}/makeAdmin`}>
-                        <MakeAdmin></MakeAdmin>
-                    </AdminRoute>
-                    <Route path={`${path}/payment`}>
-                        <Payment></Payment>
-                    </Route>
-                </Routes>
+                </Routes> */}
             </Box>
         </Box>
     );

@@ -17,7 +17,7 @@ const OrderInfo = () => {
     const [meal, setMeal] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/meals/${id}`)
+        fetch(`https://lit-meadow-17656.herokuapp.com/meals/${id}`)
             .then(res => res.json())
             .then(data => setMeal(data))
     }, []);
@@ -33,7 +33,7 @@ const OrderInfo = () => {
             status: 'pending',
 
         }
-        axios.post("http://localhost:5000/order", OrderInfo)
+        axios.post("https://lit-meadow-17656.herokuapp.com/order", OrderInfo)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Order Confirmed');

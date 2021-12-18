@@ -33,7 +33,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch('https://frozen-bayou-71820.herokuapp.com/purchase/byEmail', {
+        fetch('https://lit-meadow-17656.herokuapp.com/order/byEmail', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -48,7 +48,7 @@ const MyOrders = () => {
 
     //Delete Order
     const handleDeleteOrder = id => {
-        const url = `https://frozen-bayou-71820.herokuapp.com/purchase/${id}`;
+        const url = `https://lit-meadow-17656.herokuapp.com/order/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -66,7 +66,7 @@ const MyOrders = () => {
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell align="center">Product Name</StyledTableCell>
+                        <StyledTableCell align="center">Meal Name</StyledTableCell>
                         <StyledTableCell align="center">Email</StyledTableCell>
                         <StyledTableCell align="center">Address</StyledTableCell>
                         <StyledTableCell align="center">Phone</StyledTableCell>
@@ -77,7 +77,7 @@ const MyOrders = () => {
                 <TableBody>
                     {myOrders.map((myOrder) => (
                         <StyledTableRow key={myOrder._id}>
-                            <StyledTableCell align="center">{myOrder.product_name}</StyledTableCell>
+                            <StyledTableCell align="center">{myOrder.meal_name}</StyledTableCell>
                             <StyledTableCell align="center">{myOrder.email}</StyledTableCell>
                             <StyledTableCell align="center">{myOrder.address}</StyledTableCell>
                             <StyledTableCell align="center">{myOrder.number}</StyledTableCell>

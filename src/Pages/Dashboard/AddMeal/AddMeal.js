@@ -6,7 +6,7 @@ import './AddMeal.css';
 const AddMeal = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('https://frozen-bayou-71820.herokuapp.com/products', data)
+        axios.post('https://lit-meadow-17656.herokuapp.com/meals', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added Product successfully');

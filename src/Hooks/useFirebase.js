@@ -13,7 +13,7 @@ const useFirebase = () => {
 
     const auth = getAuth();
 
-    const registerUser = (email, password, name, location, history) => {
+    const registerUser = (email, password, name, location, navigate) => {
         setIsLoading(false)
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
@@ -27,7 +27,7 @@ const useFirebase = () => {
                     .catch((error) => {
                     });
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                navigate(destination);
                 saveUser(email, name, 'POST');
                 setError('');
             })
@@ -37,12 +37,12 @@ const useFirebase = () => {
             .finally(() => setIsLoading(true));
     }
 
-    const loginUser = (email, password, location, history) => {
+    const loginUser = (email, password, location, navigate) => {
         setIsLoading(false)
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                navigate(destination);
                 setError('');
             })
             .catch((error) => {
@@ -51,7 +51,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(true));
     }
 
-    const googleSignIn = (location, history) => {
+    const googleSignIn = (location, navigate) => {
         setIsLoading(false);
         const provider = new GoogleAuthProvider();
         signInWithPopup(auth, provider)
@@ -61,7 +61,7 @@ const useFirebase = () => {
                 saveUser(user.email, user.displayName, 'PUT');
 
                 const destination = location?.state?.from || '/';
-                history.push(destination);
+                navigate(destination);
                 setError('');
             })
             .catch((error) => {
@@ -86,14 +86,14 @@ const useFirebase = () => {
     }, []);
 
     useEffect(() => {
-        fetch(`https://frozen-bayou-71820.herokuapp.com/users/${user.email}`)
+        fetch(`https://lit-meadow-17656.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
     }, [user.email])
 
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('https://frozen-bayou-71820.herokuapp.com/users', {
+        fetch('https://lit-meadow-17656.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'
@@ -103,9 +103,9 @@ const useFirebase = () => {
             .then()
     }
 
-    const logOut = (history) => {
+    const logOut = (navigate) => {
         signOut(auth).then(() => {
-            history.push('/');
+            navigate('/');
         }).catch((error) => {
             setError(error.message);
         })

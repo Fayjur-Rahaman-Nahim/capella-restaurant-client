@@ -5,10 +5,10 @@ import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     const { user, logOut } = useAuth();
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleLogOut = () => {
-        logOut(history)
+        logOut(navigate)
     }
     return (
         <div>
@@ -16,7 +16,7 @@ const Header = () => {
                 <Container >
                     <Navbar.Brand href="#home">
 
-                        <span className="fw-bold text-danger fs-2" >Rainbow Automobiles</span>
+                        <span className="fw-bold text-danger fs-2" >CAPELLA</span>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">

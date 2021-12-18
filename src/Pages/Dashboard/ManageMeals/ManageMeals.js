@@ -29,16 +29,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const ManageMeals = () => {
-    const [products, setProducts] = useState([]);
+    const [meals, setMeals] = useState([]);
     useEffect(() => {
-        fetch("https://frozen-bayou-71820.herokuapp.com/products")
+        fetch("https://lit-meadow-17656.herokuapp.com/meals")
             .then(res => res.json())
-            .then(data => setProducts(data))
+            .then(data => setMeals(data))
     }, []);
 
-    //Delete Order
-    const handleDeleteProducts = id => {
-        const url = `https://frozen-bayou-71820.herokuapp.com/products/${id}`;
+    //Delete Meal
+    const handleDeleteMeal = id => {
+        const url = `https://lit-meadow-17656.herokuapp.com/meals/${id}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -46,8 +46,8 @@ const ManageMeals = () => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     alert('Deleted Successfully');
-                    const remaingPurchaseOrders = products?.filter(order => order._id !== id);
-                    setProducts(remaingPurchaseOrders);
+                    const remaingPurchaseOrders = meals?.filter(order => order._id !== id);
+                    setMeals(remaingPurchaseOrders);
                 }
             })
     }
@@ -56,18 +56,18 @@ const ManageMeals = () => {
             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                 <TableHead>
                     <TableRow>
-                        <StyledTableCell align="center">Product Name</StyledTableCell>
+                        <StyledTableCell align="center">Meal Name</StyledTableCell>
                         <StyledTableCell align="center">Price</StyledTableCell>
                         <StyledTableCell align="center">Action</StyledTableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {products.map((product) => (
-                        <StyledTableRow key={product._id}>
-                            <StyledTableCell align="center">{product.title}</StyledTableCell>
-                            <StyledTableCell align="center">{product.price}</StyledTableCell>
+                    {meals.map((meal) => (
+                        <StyledTableRow key={meal._id}>
+                            <StyledTableCell align="center">{meal.name}</StyledTableCell>
+                            <StyledTableCell align="center">{meal.price}</StyledTableCell>
                             <StyledTableCell align="center">
-                                <button className="btn btn-danger mt-2" onClick={() => handleDeleteProducts(product._id)} >Delete</button>
+                                <button className="btn btn-danger mt-2" onClick={() => handleDeleteMeal(meal._id)} >Delete</button>
                             </StyledTableCell>
                         </StyledTableRow>
                     ))}

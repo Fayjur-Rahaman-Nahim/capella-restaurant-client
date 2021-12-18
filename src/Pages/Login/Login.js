@@ -62,7 +62,7 @@ const Login = () => {
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <div className="mt-5 pt-3">
-                        <img src="https://i.ibb.co/RP4xT01/login.jpg" className="img-fluid" alt="" />
+                        <img src="https://media.istockphoto.com/photos/delicious-meal-picture-id1295387240?b=1&k=20&m=1295387240&s=170667a&w=0&h=KtWYFjSBgpNgVkE3P-WKZ2F6V-VxyUBBtJIP_k8IANM=" className="img-fluid" alt="" />
                     </div>
                 </Grid>
             </Grid>

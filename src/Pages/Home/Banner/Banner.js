@@ -9,37 +9,28 @@ const Banner = () => {
                 <Carousel.Item className="banner_item">
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/8MRPJHT/photo-1489516408517-0c0a15662682.jpg"
+                        src="https://i.ibb.co/f2B8QJP/Top-view-of-roasted-potatoes-served-in-a-gray-plate-on-black-table-The-plate-is-located-at-the-left.jpg"
                         alt="First slide"
                     />
-                    <Carousel.Caption >
-                        <h3>The journey of a thousand miles begins with a single step.</h3>
-                        <p>May your journey be eye-opening!</p>
-                    </Carousel.Caption>
+
                 </Carousel.Item>
                 <Carousel.Item className="banner_item">
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/MnCwvy7/photo-1492294112339-ea831887e5d7.jpg"
+                        src="https://i.ibb.co/4fpkBZj/Roasted-chicken-breast-with-green-beans-and-boiled-mashed-potatoes-Dinner-or-breakfast-serving.jpg"
                         alt="Second slide"
                     />
 
-                    <Carousel.Caption >
-                        <h3>Go safe, move safe, stay safe, leave safe and then back safes</h3>
-                        <p>Wherever you go, you take yourself with you.</p>
-                    </Carousel.Caption>
+
                 </Carousel.Item>
                 <Carousel.Item className="banner_item">
                     <img
                         className="d-block w-100"
-                        src="https://i.ibb.co/2633RYg/photo-1528127269322-539801943592.jpg"
+                        src="https://i.ibb.co/RSDRG3Y/Grilled-Chicken-Legs-With-Vegetable-Skewers-Baked-Beans-and-Coleslaw.jpg"
                         alt="Third slide"
                     />
 
-                    <Carousel.Caption >
-                        <h3>Wishing you a safe journey and a relaxing vacation when you arrive!</h3>
-                        <p>May angels fly with you wherever you roam and guide you back safely to family and home.</p>
-                    </Carousel.Caption>
+
                 </Carousel.Item>
             </Carousel>
         </div>

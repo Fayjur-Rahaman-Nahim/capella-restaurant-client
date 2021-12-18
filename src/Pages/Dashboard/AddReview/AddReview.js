@@ -10,7 +10,7 @@ const AddReview = () => {
         const dataInfo = {
             ...data
         }
-        fetch('https://frozen-bayou-71820.herokuapp.com/reviews', {
+        fetch('https://lit-meadow-17656.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
