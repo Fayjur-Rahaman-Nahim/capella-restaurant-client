@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Spicy Arrabiata Penne",
+    "img": "https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg",
+    "description": "Bring a large pot of water to a boil. Add kosher salt to the boiling water, then add the pasta. Cook according to the package instructions, about 9 minutes.",
+    "price": "250"
+  },
+  {
+    "name": "Apple Frangipan Tart",
+    "img": "https://www.themealdb.com/images/media/meals/wxywrq1468235067.jpg",
+    "description": "reheat the oven to 200C/180C Fan/Gas 6.\r\nPut the biscuits in a large re-sealable freezer bag and bash with a rolling pin into fine crumbs.",
+    "price": "350"
+  },
+  {
+    "name": "Pad See Ew",
+    "img": "https://www.themealdb.com/images/media/meals/uuuspp1468263334.jpg",
+    "description": "Mix Sauce in small bowl.\r\nMince garlic into wok with oil. Place over high heat, when hot, add chicken and Chinese broccoli stems, cook until chicken is light golden.",
+    "price": "280"
+  },
+  {
+    "name": "Bakewell tart",
+    "img": "https://www.themealdb.com/images/media/meals/wyrqqq1468233628.jpg",
+    "description": "To make the pastry, measure the flour into a bowl and rub in the butter with your fingertips until the mixture resembles fine breadcrumbs. Mixing to form a soft dough.",
+    "price": "320"
+  },
+  {
+    "name": "Chocolate Gateau",
+    "img": "https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg",
+    "description": "Preheat the oven to 180°C/350°F/Gas Mark 4. Grease and line the base of an 8 in round spring form cake tin with baking parchment\r\nBreak the chocolate into a heatproof.",
+    "price": "220"
+  },
+  {
+    "name": "Dal fry",
+    "img": "https://www.themealdb.com/images/media/meals/wuxrtu1483564410.jpg",
+    "description": "Wash and soak toor dal in approx. 3 cups of water, for at least one hours. Dal will be double in volume after soaking. Drain the water.\r\nCook dal with 2-1/2 cups water and add salt.",
+    "price": "270"
+  },
+  {
+    "name": "Eton Mess",
+    "img": "https://www.themealdb.com/images/media/meals/uuxwvq1483907861.jpg",
+    "description": "Purée half the strawberries in a blender. Chop the remaining strawberries, reserving four for decoration.\r\nWhip the double cream until stiff peaks form.",
+    "price": "255"
+  },
+  {
+    "name": "Fettucine alfredo",
+    "img": "https://www.themealdb.com/images/media/meals/uquqtu1511178042.jpg",
+    "description": "In a medium saucepan, stir the clotted cream, butter and cornflour over a low-ish heat and bring to a low simmer. Turn off the heat and keep warm.\r\nMeanwhile",
+    "price": "360"
+  },
+  {
+    "name": "Gigantes Plaki",
+    "img": "https://www.themealdb.com/images/media/meals/b79r6f1585566277.jpg",
+    "description": "Soak the beans overnight in plenty of water. Drain, rinse, then place in a pan covered with water. Bring to the boil, reduce the heat, then simmer for approx 50 mins until.",
+    "price": "440"
+  }
+]
